@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <marquee><h1> Hi! welcome Lets do Some Mathematics</h1></marquee><br></br>
+  <div class="theme-toggle">
+    <button id="toggleTheme">🌙</button>
+  </div>
+
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="btn" onclick="clearDisplay()">C</button>
+      <button class="btn" onclick="appendOperator('/')">÷</button>
+      <button class="btn" onclick="appendOperator('*')">×</button>
+      <button class="btn" onclick="appendOperator('-')">−</button>
+
+      <button class="btn" onclick="appendNumber('7')">7</button>
+      <button class="btn" onclick="appendNumber('8')">8</button>
+      <button class="btn" onclick="appendNumber('9')">9</button>
+      <button class="btn" onclick="appendOperator('+')">+</button>
+
+      <button class="btn" onclick="appendNumber('4')">4</button>
+      <button class="btn" onclick="appendNumber('5')">5</button>
+      <button class="btn" onclick="appendNumber('6')">6</button>
+      <button class="btn equal" onclick="calculate()">=</button>
+
+      <button class="btn" onclick="appendNumber('1')">1</button>
+      <button class="btn" onclick="appendNumber('2')">2</button>
+      <button class="btn" onclick="appendNumber('3')">3</button>
+
+      <button class="btn zero" onclick="appendNumber('0')">0</button>
+      <button class="btn" onclick="appendNumber('.')">.</button>
+    </div>
+  </div>
+  <div class="background">
+    <div class="circle" style="width: 80px; height: 80px; left: 10%; animation-delay: 0s;"></div>
+    <div class="circle" style="width: 100px; height: 100px; left: 30%; animation-delay: 4s;"></div>
+    <div class="circle" style="width: 60px; height: 60px; left: 50%; animation-delay: 2s;"></div>
+    <div class="circle" style="width: 90px; height: 90px; left: 70%; animation-delay: 1s;"></div>
+    <div class="circle" style="width: 70px; height: 70px; left: 85%; animation-delay: 6s;"></div>
+  </div>
+  
+<script src="script .js"></script>
+  </script>
+</body>
+</html>

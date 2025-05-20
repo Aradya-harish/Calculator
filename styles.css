@@ -1,0 +1,226 @@
+:root {
+    --bg-color: rgba(255, 255, 255, 0.1);
+    --display-bg: rgba(0, 0, 0, 0.2);
+    --btn-bg: rgba(255, 255, 255, 0.05);
+    --btn-hover: rgba(255, 255, 255, 0.15);
+    --text-color: #ffffff;
+    --accent: #4fc3f7;
+    --glass-blur: blur(20px);
+  }
+  .background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    animation: float 20s infinite ease-in-out;
+    mix-blend-mode: screen;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(-100vh) scale(1.2);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 0.5;
+    }
+  }
+  
+  
+  body.light {
+    --bg-color: rgba(255, 255, 255, 0.8);
+    --display-bg: rgba(255, 255, 255, 0.6);
+    --btn-bg: rgba(255, 255, 255, 0.5);
+    --btn-hover: rgba(0, 0, 0, 0.05);
+    --text-color: #1e1e1e;
+    --accent: #007acc;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #2c3e50, #000);
+    color: var(--text-color);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .calculator {
+    backdrop-filter: var(--glass-blur);
+    background: var(--bg-color);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    width: 360px;
+    transition: 0.3s ease;
+  }
+  
+  .display {
+    background: var(--display-bg);
+    padding: 25px;
+    font-size: 2.8rem;
+    border-radius: 15px;
+    text-align: right;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    min-height: 60px;
+    word-wrap: break-word;
+    transition: background 0.3s;
+    animation: fadeIn 0.2s ease;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  .btn {
+    background: var(--btn-bg);
+    border: none;
+    border-radius: 15px;
+    padding: 22px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s, transform 0.1s ease;
+  }
+  
+  .btn:hover {
+    background: var(--btn-hover);
+  }
+  
+  .btn:active {
+    transform: scale(0.95);
+  }
+  
+  .equal {
+    background-color: var(--accent);
+    color: #afacac;
+  }
+  
+  .equal:hover {
+    filter: brightness(1.2);
+  }
+  
+  .zero {
+    grid-column: span 2;
+  }
+  
+  /* Ripple animation */
+  .btn::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+  }
+  
+  .btn:active::after {
+    width: 150%;
+    height: 150%;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+  
+  #toggleTheme {
+    background: var(--btn-bg);
+    border: none;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #toggleTheme:hover {
+    background: var(--btn-hover);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile friendly */
+  @media (max-width: 400px) {
+    .calculator {
+      width: 90%;
+    }
+  
+    .display {
+      font-size: 2rem;
+    }
+  
+    .btn {
+      padding: 18px;
+      font-size: 1.2rem;
+    }
+  }
+  h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(5, 200, 83);
+    font-size: 45px;
+
+  }
+  .calculator {
+    border-radius: 40px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  }
+  body.neon {
+    --bg-color: rgba(0, 0, 0, 0.4);
+    --accent: #39ff14;
+    background: linear-gradient(135deg, #1a1a1a, #000);
+  }
+  body {
+    background-image: url('background\ 1.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: parallax feel */
+  }
+  @media (max-width: 768px) {
+    body {
+      background-position: top center;
+    }
+  }
+    
+    
+  
+  
